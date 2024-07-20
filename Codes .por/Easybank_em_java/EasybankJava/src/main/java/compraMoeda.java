@@ -1,0 +1,138 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class compraMoeda {
+
+	public static void compraMoeda1() {
+		double valorparamoeda, precoAtualusd, precoAtualeur, precoAtualdinar;
+		int opcaomoeda, opcao1;
+
+		Clean.clearConsole();
+		System.out.println("Insira o quanto deseja comprar (em Reais): ");
+		Scanner scanner = new Scanner(System.in);
+		valorparamoeda = scanner.nextDouble();
+		Clean.clearConsole();
+
+		System.out.println("BRL$" + valorparamoeda + ".");
+		System.out.println("Agora digite a opção que deseja comprar:");
+
+		Util.wait(4000);
+
+		System.out.println("1) Dólar (USD)");
+		@SuppressWarnings("unused")
+		String Dolar = "Dólar (USD)";
+		Random random = new Random();
+		precoAtualusd = 5.38 * ((80 + (100 - 80) * random.nextDouble()) / 100);
+		System.out.println("Valor atual: R$" + precoAtualusd);
+
+		Util.wait(1000);
+
+		System.out.println("2) Euro (EUR)");
+		@SuppressWarnings("unused")
+		String Euro = "Euro (EUR)";
+		precoAtualeur = 5.78 * ((80 + (100 - 80) * random.nextDouble()) / 100);
+		System.out.println("Valor atual: R$" + precoAtualeur);
+
+		Util.wait(1000);
+
+		System.out.println("3) Dinar Kuwaitiano (KWD)");
+		@SuppressWarnings("unused")
+		String Dinar = "Dinar Kuwaitiano (KWD)";
+		precoAtualdinar = 17.55 * ((80 + (100 - 80) * random.nextDouble()) / 100);
+		System.out.println("Valor atual: R$" + precoAtualdinar + "\n");
+
+		Util.wait(1000);
+
+		System.out.println("Insira a opção que deseja comprar: ");
+		opcaomoeda = scanner.nextInt();
+
+		switch (opcaomoeda) {
+		case 1:
+			Clean.clearConsole();
+			System.out.println("O total em Dólares é de USD$" + (valorparamoeda / precoAtualusd) + ".\n");
+			Util.wait(1000);
+			System.out.println("1) Fazer uma nova simulação");
+			System.out.println("2) Voltar para página inicial");
+			System.out.println("3) Encerrar o programa");
+			System.out.println("\nEscolha uma opção: ");
+			opcao1 = scanner.nextInt();
+			Clean.clearConsole();
+			switch (opcao1) {
+			case 1:
+				compraMoeda1();
+				break;
+			case 2:
+				telaInicial.telaInicial1();
+				break;
+			case 3:
+				break;
+			default:
+				System.out.println("Opção Inválida !");
+				compraMoeda1();
+				break;
+			}
+			break;
+
+		case 2:
+			Clean.clearConsole();
+			System.out.println("O total em Euros é de EUR$" + (valorparamoeda / precoAtualeur) + ".\n");
+			Util.wait(1000);
+			System.out.println("1) Fazer uma nova simulação");
+			System.out.println("2) Voltar para página inicial");
+			System.out.println("3) Encerrar o programa");
+			System.out.println("\nEscolha uma opção: ");
+			opcao1 = scanner.nextInt();
+			Clean.clearConsole();
+			switch (opcao1) {
+			case 1:
+				compraMoeda1();
+				break;
+			case 2:
+				telaInicial.telaInicial1();
+				break;
+			case 3:
+				break;
+			default:
+				System.out.println("Opção Inválida !");
+				compraMoeda1();
+				break;
+			}
+			break;
+
+		case 3:
+			Clean.clearConsole();
+			System.out.println("O total em Dinares Kuwaitianos é de KWD$" + (valorparamoeda / precoAtualdinar) + ".\n");
+			Util.wait(1000);
+			System.out.println("1) Fazer uma nova simulação");
+			System.out.println("2) Voltar para página inicial");
+			System.out.println("3) Encerrar o programa");
+			System.out.println("\nEscolha uma opção: ");
+			opcao1 = scanner.nextInt();
+			Clean.clearConsole();
+			switch (opcao1) {
+			case 1:
+				compraMoeda1();
+				break;
+			case 2:
+				telaInicial.telaInicial1();
+				break;
+			case 3:
+				break;
+			default:
+				System.out.println("Opção Inválida !");
+				compraMoeda1();
+				break;
+			}
+			break;
+
+		default:
+			System.out.println("Opção inválida, tente novamente");
+			Util.wait(3000);
+			Clean.clearConsole();
+			compraMoeda1();
+			break;
+		}
+		scanner.close();
+	}
+
+}

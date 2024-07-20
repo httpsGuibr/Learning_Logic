@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\guilh\Desktop\Easybank em java\.metadata\.plugins\org.eclipse.jdt.core
+2044679188.index
+2885971022.index
+1865797976.index

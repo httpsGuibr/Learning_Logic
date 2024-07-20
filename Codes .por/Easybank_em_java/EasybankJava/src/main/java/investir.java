@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class investir {
+	public static void investir1() {
+		Scanner scanner = new Scanner(System.in);
+		double opcao;
+
+		Clean.clearConsole();
+		System.out.println("Bem vindo ao portal de simulações de investimentos EasyBank");
+		System.out.println("____________________________________________________________________________________\n\n");
+		System.out.println("1) Opções de renda fixa. \n");
+		System.out.println("| Investir em renda fixa emprestar dinheiro a um banco ou ao governo.              | \n");
+		System.out.println("| Eles se comprometem a devolver o valor com um rendimento extra após um tempo.    | \n");
+		System.out.println("| É seguro e você sabe quanto vai ganhar.                                          | \n");
+		System.out.println("\n2) Opções de renda variável. \n");
+		System.out.println("| Investir em renda variável é comprar um pedacinho de uma empresa.                | \n");
+		System.out.println("| O valor pode subir e descer. Você pode ganhar mais do que renda fixa,            | \n");
+		System.out.println("| mas também pode perder mais.                                                     | \n");
+		System.out.println("| É arriscado, mas pode valer a pena.                                              | \n");
+		System.out.println("____________________________________________________________________________________\n");
+		System.out.println("\n3) Voltar para página inicial \n");
+		System.out.println("4) Encerrar o programa");
+		System.out.println("\nDigite a opção na qual deseja prosseguir: ");
+
+		opcao = scanner.nextDouble();
+
+		switch ((int) opcao) {
+		case 1:
+			rendaFixa.rendaFixa1();
+			break;
+		case 2:
+			rendaVariavel.rendaVariavel1();
+			break;
+		case 3:
+			Clean.clearConsole();
+			telaInicial.telaInicial1();
+			break;
+		case 4:
+			Clean.clearConsole();
+			break;
+		default:
+			System.out.println("Opção inválida, tente novamente");
+			Util.wait(3000);
+			Clean.clearConsole();
+			investir.investir1();
+			break;
+		}
+		scanner.close();
+	}
+
+}

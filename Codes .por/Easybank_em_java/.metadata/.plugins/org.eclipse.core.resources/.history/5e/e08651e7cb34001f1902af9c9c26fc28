@@ -1,0 +1,137 @@
+
+public class Types {
+	public void criptos() {
+	    double opcaocripto;
+	    Clean.clearConsole();
+	    System.out.println("Escolha entre as seguintes opções de Criptomoedas:");
+	    System.out.println("1) Bitcoin (BTC)");
+	    String Bitcoin = "Bitcoin";
+	    double precoAtualbitar = Math.round((348312.23 * (Util.sorteia(80, 100) / 100)) * 100.0) / 100.0;
+	    System.out.println("Valor atual: R$" + precoAtualbitar);
+	    System.out.println("2) Ethereum (ETH)");
+	    String Ethereum = "Ethereum";
+	    double precoAtualethar = Math.round((18863.35 * (Util.sorteia(80, 100) / 100)) * 100.0) / 100.0;
+	    System.out.println("Valor atual: R$" + precoAtualethar);
+	    System.out.println("\nVocê pode comprar frações a partir de 1 real.");
+	    System.out.println("3) Voltar para as opções de investimento.\n");
+	    System.out.print("Digite a opção na qual deseja prosseguir: ");
+	    opcaocripto = Util.leReal();
+
+	    switch ((int) opcaocripto) {
+	        case 1:
+	            graficoparametrizado(Bitcoin, precoAtualbitar, 1.2);
+	            break;
+	        case 2:
+	            graficoparametrizado(Ethereum, precoAtualethar, 1.2);
+	            break;
+	        case 3:
+	            rendavariavel();
+	            break;
+	        default:
+	            System.out.println("Opção inválida, tente novamente");
+	            Util.aguarde(3000);
+	            Clean.clearConsole();
+	            rendavariavel();
+	            break;
+	    }
+	}
+
+	public void acoes() {
+	    double opcaoacao;
+	    Clean.clearConsole();
+	    System.out.println("Opções de ações disponíveis na bolsa de valores Brasileira atualmente:");
+	    System.out.println("_____________________________");
+	    System.out.println("\n1) Itaú Unibanco, (ITUB4)");
+	    String ITUB4 = "Itaú Unibanco, (ITUB4)";
+	    double precoAtualITUB4 = Math.round((32.12 * (Util.sorteia(80, 100) / 100)) * 100.0) / 100.0;
+	    System.out.println("\n2) Nubank, (NUBR33)");
+	    String NUBR33 = "Nubank, (NUBR33)";
+	    double precoAtualNUBR33 = Math.round((3.14 * (Util.sorteia(80, 100) / 100)) * 100.0) / 100.0;
+	    System.out.println("\n3) Bradesco, (BBDC4)");
+	    String BBDC4 = "Bradesco, (BBDC4)";
+	    double precoAtualBBDC4 = Math.round((12.40 * (Util.sorteia(80, 100) / 100)) * 100.0) / 100.0;
+	    System.out.println("\n4) Banco Inter, (INBR32)");
+	    String INBR32 = "Banco Inter, (INBR32)";
+	    double precoAtualINBR32 = Math.round((31.43 * (Util.sorteia(80, 100) / 100)) * 100.0) / 100.0;
+	    System.out.println("\n5) Oracle, (ORCL34)");
+	    String ORCL34 = "Oracle, (ORCL34)";
+	    double precoAtualORCL34 = Math.round((778.86 * (Util.sorteia(80, 100) / 100)) * 100.0) / 100.0;
+	    System.out.println("\n6) Voltar para as opções de investimento.");
+	    System.out.println("______________________________\n");
+	    System.out.println("\nDigite o número correspondente à Ação para ver as informações dela.\n");
+	    opcaoacao = Util.leReal();
+	    Clean.clearConsole();
+
+	    switch ((int) opcaoacao) {
+	        case 1:
+	            graficoparametrizado(ITUB4, precoAtualITUB4, 1.2);
+	            break;
+	        case 2:
+	            graficoparametrizado(NUBR33, precoAtualNUBR33, 1.2);
+	            break;
+	        case 3:
+	            graficoparametrizado(BBDC4, precoAtualBBDC4, 1.2);
+	            break;
+	        case 4:
+	            graficoparametrizado(INBR32, precoAtualINBR32, 1.2);
+	            break;
+	        case 5:
+	            graficoparametrizado(ORCL34, precoAtualORCL34, 1.2);
+	            break;
+	        case 6:
+	            rendavariavel();
+	            break;
+	        default:
+	            System.out.println("Opção inválida, tente novamente");
+	            Util.aguarde(3000);
+	            Clean.clearConsole();
+	            rendavariavel();
+	            break;
+	    }
+	}
+
+	
+	public void flls() {
+	    double opcaofll;
+	    Clean.clearConsole();
+	    System.out.println("Opções de fundos imobiliários disponíveis na bolsa de valores Brasileira atualmente:");
+	    System.out.println("_____________________________");
+	    System.out.println("\n1) Maxi Renda Fundo Invest Imobiliario FII (MXRF11)");
+	    String MXFR11 = "Maxi Renda Fundo Invest Imobiliario FII (MXRF11)";
+	    double precoAtualMXFR11 = Math.round((31.43 * (Util.sorteia(80, 100) / 100)) * 100.0) / 100.0;
+	    System.out.println("\n2) Fator Verita Fundo de Investimento Imobiliario - FII (VRTA11)");
+	    String VRTA11 = "Fator Verita Fundo de Investimento Imobiliario - FII (VRTA11)";
+	    double precoAtualVRTA11 = Math.round((31.43 * (Util.sorteia(80, 100) / 100)) * 100.0) / 100.0;
+	    System.out.println("\n3) CSHG Prime Offices (HGPO11)");
+	    String HGPO11 = "CSHG Prime Offices (HGPO11)";
+	    double precoAtualHGPO11 = Math.round((31.43 * (Util.sorteia(80, 100) / 100)) * 100.0) / 100.0;
+	    System.out.println("\n4) Voltar para as opções de investimento.");
+	    System.out.println("______________________________\n");
+	    System.out.println("\nDigite o número correspondente à Ação para ver as informações dela.\n");
+	    opcaofll = Util.leReal();
+	    Clean.clearConsole();
+
+	    switch ((int) opcaofll) {
+	        case 1:
+	            graficoparametrizado(MXFR11, precoAtualMXFR11, 1.2);
+	            break;
+	        case 2:
+	            graficoparametrizado(VRTA11, precoAtualVRTA11, 1.2);
+	            break;
+	        case 3:
+	            graficoparametrizado(HGPO11, precoAtualHGPO11, 1.2);
+	            break;
+	        case 4:
+	            rendavariavel();
+	            break;
+	        default:
+	            System.out.println("Opção inválida, tente novamente");
+	            Util.aguarde(3000);
+	            Clean.clearConsole();
+	            rendavariavel();
+	            break;
+	    }
+	}
+
+	
+}

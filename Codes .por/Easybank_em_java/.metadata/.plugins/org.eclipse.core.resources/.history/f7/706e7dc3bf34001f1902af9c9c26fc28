@@ -1,0 +1,52 @@
+
+public class telaInicial {
+	public static void telainicial() {
+	    double Opcao1;
+	    Clean.clearConsole();
+	    System.out.println("EasyBank Internet Banking");
+	    System.out.println("Seja bem vindo " + Global.nomecriarconta + ".");
+	    System.out.println("\n--------------------------------\n");
+	    System.out.println("Saldo:      R$ " + Global.saldo);
+	    System.out.println("\n--------------------------------\n");
+	    System.out.println("Escolha uma das opções abaixo:");
+	    System.out.println("1) Realizar transferência via Pix");
+	    System.out.println("2) Simulações de empréstimos");
+	    System.out.println("3) Consultar extrato");
+	    System.out.println("4) Câmbio digital (Dólar e Euro)");
+	    System.out.println("5) Simulações de investimentos");
+	    System.out.print("Digite a opção: ");
+
+	    Scanner scanner = new Scanner(System.in);
+	    Opcao1 = scanner.nextDouble();
+
+	    switch ((int) Opcao1) {
+	        case 1:
+	            Clean.clearConsole();
+	            transfpix();
+	            break;
+	        case 2:
+	            Clean.clearConsole();
+	            simuemprest();
+	            break;
+	        case 3:
+	            Clean.clearConsole();
+	            consultaextrato();
+	            break;
+	        case 4:
+	            Clean.clearConsole();
+	            cambiodigital();
+	            break;
+	        case 5:
+	            Clean.clearConsole();
+	            investir();
+	            break;
+	        default:
+	            System.out.println("Opção inválida, tente novamente");
+	            Util.wait(3000);
+	            Clean.clearConsole();
+	            telainicial();
+	            break;
+	    }
+	}
+
+}

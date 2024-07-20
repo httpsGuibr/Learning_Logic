@@ -1,0 +1,80 @@
+import java.util.Random;
+import java.util.Scanner;
+public class criarNovaConta {
+
+    public static void criarNovaConta1() {
+        double Ncriarconta, Ncriaragencia, Criarsenha, cpf, ntelefone, rendatotal, validarsenha, numerocaptcha;
+        String nomecriarconta, email, ocupacao, prosseguir;
+
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        
+        Clean.clearConsole();
+
+        System.out.println("Bem vindo ao EasyBank Internet Banking");
+        System.out.println("Vamos começar...");
+        Util.wait(3000);
+
+        System.out.println("Insira seu nome completo: ");
+        nomecriarconta = scanner.nextLine();
+        Clean.clearConsole();
+        //Util.wait(3000);
+        System.out.println("Qual o seu numero CPF? (Apenas números)");
+        cpf = scanner.nextInt();
+        System.out.println("Checando históricos...");
+        Util.wait(3000);
+        System.out.println("Dados encontrados...");
+        Util.wait(1500);
+        Clean.clearConsole();
+
+        System.out.println("Qual o seu numero de telefone? (Apenas números)");
+        ntelefone = scanner.nextInt();
+        Clean.clearConsole();
+
+        System.out.println("Insira um email para cadastro do login: (Ex. xxx@email.com)");
+        email = scanner.next();
+        Clean.clearConsole();
+
+        System.out.println("Insira a senha que deseja utilizar nesta conta:");
+        Global.senhacriarconta = scanner.nextInt();
+        System.out.println("Confirme sua senha:");
+        validarsenha = scanner.nextInt();
+        Clean.clearConsole();
+
+        if (Global.senhacriarconta == validarsenha) {
+            captcha.captcha1(); 
+            Clean.clearConsole();
+
+            System.out.println("Qual é sua ocupação profissional atual?");
+            ocupacao = scanner.next();
+            System.out.println("Qual sua renda total atual? (Em Reais)");
+            rendatotal = scanner.nextInt();
+            Util.wait(1000);
+
+            System.out.println("Enviando informações para análise...");
+            Util.wait(3000);
+            System.out.println("Obrigado pelas informações, vamos lhe redirecionar!");
+            Util.wait(3000);
+            Clean.clearConsole();
+
+            System.out.println("Bem vindo ao EasyBank Internet Banking " + nomecriarconta + ".");
+            int numerorandomconta = random.nextInt(90000) + 10000;
+            int numerorandomagencia = random.nextInt(9000) + 1000;
+            System.out.println("O número da sua conta é " + numerorandomconta + " e sua agência é " + numerorandomagencia + ".");
+            System.out.println("Aperte ENTER para prosseguir.");
+            prosseguir = scanner.nextLine();
+
+            if (prosseguir.equals("")) {
+            	Clean.clearConsole();
+                System.out.println("Vamos lhe redirecionar à página inicial...");
+                Util.wait(7000);
+                Clean.clearConsole();
+                Main.main(null); 
+            } else {
+                System.out.println("Digite ENTER");
+            }
+        } else {
+            System.out.println("Senha não confere, tente novamente.");
+        }
+    }
+}

@@ -1,0 +1,6 @@
+public static void preencherVetor(double[][] operacao_saida) {
+        for (int x = 0; x < 1000; x++) {
+            operacao_saida[x][0] = 0.0;
+            operacao_saida[x][1] = 0.0;
+        }
+}
